@@ -20,7 +20,7 @@ class RoomTest {
     }
 
     @Test
-    public void checkout() {
+    public void checkout_RoomStatus_RoomIsNotOccupied() {
         // Arrange
         Room room456 = new Room(1, 100);
 
@@ -32,6 +32,14 @@ class RoomTest {
     }
 
     @Test
-    public void cleanRoom() {
+    public void cleanRoom_RoomStatus_RoomIsClean() {
+        // Arrange
+        Room room789 = new Room(2, 235);
+
+        // Act
+        room789.cleanRoom();
+
+        // Assert
+        assertFalse(room789.isDirty());
     }
 }
